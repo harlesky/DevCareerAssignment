@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .summary {
+            font-weight: bold;
+        }
+        .education, .job-experiences, .hobby, .other-skills {
+            margin-bottom: 30px;
+        }
+        .contact-form {
+            margin-top: 30px;
+        }
+        label, input, select {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Portfolio</h1>
+        <div class="summary">
+            <h2>Summary</h2>
+            <p>I am a passionate web developer with a strong interest in creating user-friendly and innovative web solutions. Constantly learning and exploring new technologies.</p>
+        </div>
+
+        <div class="education">
+            <h2>Education</h2>
+            <p>Currently Studying Physics, University of Lagos</p>
+            <p>Certification in Data Science Beginner, IBM</p>
+        </div>
+
+        <div class="job-experiences">
+            <h2>Job Experiences</h2>
+            <p>Intern at Transmission Company Of Nigeria (July 2023 - September 2023)</p>
+        </div>
+
+        <div class="hobby">
+            <h2>Hobby</h2>
+            <p>I enjoy Watching movies, playing volleyball all sort of sports, and challenging myself with Science problems.</p>
+        </div>
+
+        <div class="other-skills">
+            <h2>Other Skills</h2>
+            <p>Proficient in HTML, CSS, JavaScript, React.js, Node.js, and MySQL</p>
+        </div>
+
+        <div class="contact-form">
+            <h2>Contact Me</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
