@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .calculator {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            width: 45px;
+            height: 45px;
+            margin: 5px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f4f4f4;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #ddd;
+        }
+        input[type="button"].operator {
+            background-color: #ff8c00;
+            color: #fff;
+            border: none;
+        }
+        input[type="button"].operator:hover {
+            background-color: #ffaa33;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <input type="button" value="7">
+            <input type="button" value="8">
+            <input type="button" value="9">
+            <input type="button" class="operator" value="+">
+            <input type="button" value="4">
+            <input type="button" value="5">
+            <input type="button" value="6">
+            <input type="button" class="operator" value="-">
+            <input type="button" value="1">
+            <input type="button" value="2">
+            <input type="button" value="3">
+            <input type="button" class="operator" value="*">
+            <input type="button" value="0">
+            <input type="button" class="operator" value=".">
+            <input type="button" class="operator" value="/">
+            <input type="button" class="operator" value="%">
+            <input type="button" class="operator" value="C">
+            <input type="button" class="operator" value="=">
+        </div>
+    </div>
+
+    <script>
+        const display = document.getElementById('display');
+        const buttons = document.querySelectorAll('input[type="button"]');
+        let expression = '';
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.value;
+
+              if (value === '=') {
+                  try {
+                      const result = eval(expression);
+                      display.value = result;
+                      expression = result.toString();
+                  } catch (error) {
+                      display.value = 'Error';
+                      expression = '';
+                  }
+              } else if (value === 'C') {
+                  display.value = '';
+                  expression = '';
+              } else {
+                  expression += value;
+                  display.value = expression;
+              }
+              });
+              });
+    </script>
+</body>
+</html>
